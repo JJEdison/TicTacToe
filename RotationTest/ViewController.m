@@ -37,10 +37,15 @@ const int TOP_MARGIN = 50;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _widthOfSubsquare = 145;
+    
     gameStarted = NO;
     
-    _gridFrame = CGRectMake(50, 100, 145, 145);
+    CGRect screenBounds = [[ UIScreen mainScreen] bounds];
+    
+    _widthOfSubsquare = screenBounds.size.width;
+    _gridFrame = CGRectMake(0, screenBounds.size.height / 2 - screenBounds.size.width / 2, screenBounds.size.width, screenBounds.size.width);
+    
+    int size = screenBounds.size.width;
 
     
     // As gridView animates, the coordinates of its grame rotates with it. So, for example, if it
@@ -58,15 +63,15 @@ const int TOP_MARGIN = 50;
     // the backView doesn't rotate, its origin is consistent with what the user expects to see.
 
     self.backView = [[UIView alloc] initWithFrame:_gridFrame];
-    self.gridView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 145, 145)];
+    self.gridView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, size, size)];
     [self.backView addSubview:self.gridView];
 
 
     [self.gridView addGestureRecognizer:self.tapGest];
     
-    self.gridImageView.frame = CGRectMake(0, 0, 145, 145);
+    self.gridImageView.frame = CGRectMake(0, 0, size, size);
     UIImage *image = [UIImage imageNamed:@"grid.png"];
-    self.gridImageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 145, 145)];
+    self.gridImageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, size, size)];
     [self.gridImageView setImage:image];
     [self.gridView addSubview:self.gridImageView];
     [self.gridView setBackgroundColor:[UIColor blackColor]];
@@ -77,6 +82,8 @@ const int TOP_MARGIN = 50;
 
 -(UITapGestureRecognizer *) tapGest
 {
+    NSLog(@"Did tap");
+    
     if( ! _tapGest ) {
         _tapGest = [[UITapGestureRecognizer alloc]
                     initWithTarget:self action:@selector(didTapTheView:)];
@@ -84,6 +91,8 @@ const int TOP_MARGIN = 50;
         [_tapGest setNumberOfTapsRequired:1];
         [_tapGest setNumberOfTouchesRequired:1];
     }
+    
+    
     return _tapGest;
 }
 
@@ -105,6 +114,7 @@ const int TOP_MARGIN = 50;
                              (int) (bp.y / squareWidth) * squareWidth,
                              squareWidth,
                              squareWidth);
+    
     
     
     self.ballLayer = [CALayer layer];
