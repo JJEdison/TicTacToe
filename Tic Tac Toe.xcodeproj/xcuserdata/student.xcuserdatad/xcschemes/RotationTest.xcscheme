@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EB6072218B8010B00F2B67B"
-               BuildableName = "RotationTest.app"
-               BlueprintName = "RotationTest"
-               ReferencedContainer = "container:RotationTest.xcodeproj">
+               BuildableName = "Tic Tac Toe.app"
+               BlueprintName = "Tic Tac Toe"
+               ReferencedContainer = "container:Tic Tac Toe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EB6074318B8010B00F2B67B"
-               BuildableName = "RotationTestTests.xctest"
-               BlueprintName = "RotationTestTests"
-               ReferencedContainer = "container:RotationTest.xcodeproj">
+               BuildableName = "Tic Tac ToeTests.xctest"
+               BlueprintName = "Tic Tac ToeTests"
+               ReferencedContainer = "container:Tic Tac Toe.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EB6072218B8010B00F2B67B"
-            BuildableName = "RotationTest.app"
-            BlueprintName = "RotationTest"
-            ReferencedContainer = "container:RotationTest.xcodeproj">
+            BuildableName = "Tic Tac Toe.app"
+            BlueprintName = "Tic Tac Toe"
+            ReferencedContainer = "container:Tic Tac Toe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EB6072218B8010B00F2B67B"
-            BuildableName = "RotationTest.app"
-            BlueprintName = "RotationTest"
-            ReferencedContainer = "container:RotationTest.xcodeproj">
+            BuildableName = "Tic Tac Toe.app"
+            BlueprintName = "Tic Tac Toe"
+            ReferencedContainer = "container:Tic Tac Toe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EB6072218B8010B00F2B67B"
-            BuildableName = "RotationTest.app"
-            BlueprintName = "RotationTest"
-            ReferencedContainer = "container:RotationTest.xcodeproj">
+            BuildableName = "Tic Tac Toe.app"
+            BlueprintName = "Tic Tac Toe"
+            ReferencedContainer = "container:Tic Tac Toe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

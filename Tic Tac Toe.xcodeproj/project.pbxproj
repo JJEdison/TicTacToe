@@ -37,11 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3EB6072318B8010B00F2B67B /* RotationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EB6072318B8010B00F2B67B /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB6072618B8010B00F2B67B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3EB6072818B8010B00F2B67B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EB6072A18B8010B00F2B67B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3EB6072E18B8010B00F2B67B /* RotationTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RotationTest-Info.plist"; sourceTree = "<group>"; };
+		3EB6072E18B8010B00F2B67B /* Tic Tac Toe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tic Tac Toe-Info.plist"; sourceTree = "<group>"; };
 		3EB6073018B8010B00F2B67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EB6073218B8010B00F2B67B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3EB6073418B8010B00F2B67B /* RotationTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RotationTest-Prefix.pch"; sourceTree = "<group>"; };
@@ -51,9 +51,9 @@
 		3EB6073B18B8010B00F2B67B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3EB6073C18B8010B00F2B67B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3EB6073E18B8010B00F2B67B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3EB6074418B8010B00F2B67B /* RotationTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotationTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EB6074418B8010B00F2B67B /* Tic Tac ToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tic Tac ToeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB6074518B8010B00F2B67B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3EB6074D18B8010B00F2B67B /* RotationTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RotationTestTests-Info.plist"; sourceTree = "<group>"; };
+		3EB6074D18B8010B00F2B67B /* Tic Tac ToeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tic Tac ToeTests-Info.plist"; sourceTree = "<group>"; };
 		3EB6074F18B8010B00F2B67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EB6075118B8010B00F2B67B /* RotationTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RotationTestTests.m; sourceTree = "<group>"; };
 		3EB6075B18B8019900F2B67B /* redMarble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redMarble.png; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		3EB6072418B8010B00F2B67B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EB6072318B8010B00F2B67B /* RotationTest.app */,
-				3EB6074418B8010B00F2B67B /* RotationTestTests.xctest */,
+				3EB6072318B8010B00F2B67B /* Tic Tac Toe.app */,
+				3EB6074418B8010B00F2B67B /* Tic Tac ToeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,7 +135,7 @@
 				3EB6075B18B8019900F2B67B /* redMarble.png */,
 				3EB6075C18B8019900F2B67B /* greenMarble.png */,
 				3EB6075D18B8019900F2B67B /* grid.png */,
-				3EB6072E18B8010B00F2B67B /* RotationTest-Info.plist */,
+				3EB6072E18B8010B00F2B67B /* Tic Tac Toe-Info.plist */,
 				3EB6072F18B8010B00F2B67B /* InfoPlist.strings */,
 				3EB6073218B8010B00F2B67B /* main.m */,
 				3EB6073418B8010B00F2B67B /* RotationTest-Prefix.pch */,
@@ -155,7 +155,7 @@
 		3EB6074C18B8010B00F2B67B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3EB6074D18B8010B00F2B67B /* RotationTestTests-Info.plist */,
+				3EB6074D18B8010B00F2B67B /* Tic Tac ToeTests-Info.plist */,
 				3EB6074E18B8010B00F2B67B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -164,9 +164,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3EB6072218B8010B00F2B67B /* RotationTest */ = {
+		3EB6072218B8010B00F2B67B /* Tic Tac Toe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EB6075518B8010B00F2B67B /* Build configuration list for PBXNativeTarget "RotationTest" */;
+			buildConfigurationList = 3EB6075518B8010B00F2B67B /* Build configuration list for PBXNativeTarget "Tic Tac Toe" */;
 			buildPhases = (
 				3EB6071F18B8010B00F2B67B /* Sources */,
 				3EB6072018B8010B00F2B67B /* Frameworks */,
@@ -176,14 +176,14 @@
 			);
 			dependencies = (
 			);
-			name = RotationTest;
+			name = "Tic Tac Toe";
 			productName = RotationTest;
-			productReference = 3EB6072318B8010B00F2B67B /* RotationTest.app */;
+			productReference = 3EB6072318B8010B00F2B67B /* Tic Tac Toe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3EB6074318B8010B00F2B67B /* RotationTestTests */ = {
+		3EB6074318B8010B00F2B67B /* Tic Tac ToeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EB6075818B8010B00F2B67B /* Build configuration list for PBXNativeTarget "RotationTestTests" */;
+			buildConfigurationList = 3EB6075818B8010B00F2B67B /* Build configuration list for PBXNativeTarget "Tic Tac ToeTests" */;
 			buildPhases = (
 				3EB6074018B8010B00F2B67B /* Sources */,
 				3EB6074118B8010B00F2B67B /* Frameworks */,
@@ -194,9 +194,9 @@
 			dependencies = (
 				3EB6074A18B8010B00F2B67B /* PBXTargetDependency */,
 			);
-			name = RotationTestTests;
+			name = "Tic Tac ToeTests";
 			productName = RotationTestTests;
-			productReference = 3EB6074418B8010B00F2B67B /* RotationTestTests.xctest */;
+			productReference = 3EB6074418B8010B00F2B67B /* Tic Tac ToeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +213,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3EB6071E18B8010B00F2B67B /* Build configuration list for PBXProject "RotationTest" */;
+			buildConfigurationList = 3EB6071E18B8010B00F2B67B /* Build configuration list for PBXProject "Tic Tac Toe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -226,8 +226,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EB6072218B8010B00F2B67B /* RotationTest */,
-				3EB6074318B8010B00F2B67B /* RotationTestTests */,
+				3EB6072218B8010B00F2B67B /* Tic Tac Toe */,
+				3EB6074318B8010B00F2B67B /* Tic Tac ToeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,7 +280,7 @@
 /* Begin PBXTargetDependency section */
 		3EB6074A18B8010B00F2B67B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3EB6072218B8010B00F2B67B /* RotationTest */;
+			target = 3EB6072218B8010B00F2B67B /* Tic Tac Toe */;
 			targetProxy = 3EB6074918B8010B00F2B67B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -391,9 +391,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RotationTest/RotationTest-Prefix.pch";
-				INFOPLIST_FILE = "RotationTest/RotationTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "RotationTest/Tic Tac Toe-Prefix.pch";
+				INFOPLIST_FILE = "RotationTest/Tic Tac Toe-Info.plist";
+				PRODUCT_NAME = "Tic Tac Toe";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -404,9 +404,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RotationTest/RotationTest-Prefix.pch";
-				INFOPLIST_FILE = "RotationTest/RotationTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "RotationTest/Tic Tac Toe-Prefix.pch";
+				INFOPLIST_FILE = "RotationTest/Tic Tac Toe-Info.plist";
+				PRODUCT_NAME = "Tic Tac Toe";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -427,8 +427,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "RotationTestTests/RotationTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "RotationTestTests/Tic Tac ToeTests-Info.plist";
+				PRODUCT_NAME = "Tic Tac ToeTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -446,8 +446,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RotationTest/RotationTest-Prefix.pch";
-				INFOPLIST_FILE = "RotationTestTests/RotationTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "RotationTestTests/Tic Tac ToeTests-Info.plist";
+				PRODUCT_NAME = "Tic Tac ToeTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -456,7 +456,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EB6071E18B8010B00F2B67B /* Build configuration list for PBXProject "RotationTest" */ = {
+		3EB6071E18B8010B00F2B67B /* Build configuration list for PBXProject "Tic Tac Toe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EB6075318B8010B00F2B67B /* Debug */,
@@ -465,21 +465,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EB6075518B8010B00F2B67B /* Build configuration list for PBXNativeTarget "RotationTest" */ = {
+		3EB6075518B8010B00F2B67B /* Build configuration list for PBXNativeTarget "Tic Tac Toe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EB6075618B8010B00F2B67B /* Debug */,
 				3EB6075718B8010B00F2B67B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		3EB6075818B8010B00F2B67B /* Build configuration list for PBXNativeTarget "RotationTestTests" */ = {
+		3EB6075818B8010B00F2B67B /* Build configuration list for PBXNativeTarget "Tic Tac ToeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EB6075918B8010B00F2B67B /* Debug */,
 				3EB6075A18B8010B00F2B67B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
