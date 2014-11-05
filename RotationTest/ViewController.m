@@ -25,7 +25,6 @@ const int TOP_MARGIN = 50;
 @property(nonatomic) CALayer *blueLayer;
 @property(nonatomic) UIImageView *gridImageView;
 @property (nonatomic) UITapGestureRecognizer *tapGest;
-@property(nonatomic) UISwipeGestureRecognizer *rightSwipe;
 @property(nonatomic) int widthOfSubsquare;
 @property(nonatomic) UIView *gridView;
 @property(nonatomic) CALayer *ballLayer;
@@ -62,7 +61,7 @@ const int TOP_MARGIN = 50;
     self.gridView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 145, 145)];
     [self.backView addSubview:self.gridView];
 
-    [self.gridView addGestureRecognizer:self.rightSwipe];
+
     [self.gridView addGestureRecognizer:self.tapGest];
     
     self.gridImageView.frame = CGRectMake(0, 0, 145, 145);
@@ -88,14 +87,7 @@ const int TOP_MARGIN = 50;
     return _tapGest;
 }
 
--(UISwipeGestureRecognizer *) rightSwipe
-{
-    if( !_rightSwipe ) {
-        _rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeRight:)];
-        [_rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
-    }
-    return _rightSwipe;
-}
+
 
 -(void) didTapTheView: (UITapGestureRecognizer *) tapObject
 {
@@ -126,24 +118,7 @@ const int TOP_MARGIN = 50;
     [self.balls addObject:iView];
 }
 
--(void) didSwipeRight: (UISwipeGestureRecognizer *) swipeObject
-{
-    if( ! gameStarted )
-        return;
-    CGAffineTransform currTransform = self.gridView.layer.affineTransform;
-    [UIView animateWithDuration:1 animations:^ {
-        CGAffineTransform newTransform = CGAffineTransformConcat(currTransform, CGAffineTransformMakeRotation(M_PI/2));
-        self.gridView.layer.affineTransform = newTransform;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:1 animations:^{
-            for( UIImageView *iView in self.balls )
-                iView.layer.affineTransform = CGAffineTransformConcat(iView.layer.affineTransform,
-                                                                           CGAffineTransformMakeRotation(-M_PI/2));
-        }];
-    }];
-    [self.view bringSubviewToFront:self.gridView];
-    [self.view addGestureRecognizer:self.rightSwipe];
-}
+
 
 - (void)didReceiveMemoryWarning
 {
