@@ -24,7 +24,7 @@
 		3EB6075E18B8019900F2B67B /* redMarble.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075B18B8019900F2B67B /* redMarble.png */; };
 		3EB6075F18B8019900F2B67B /* greenMarble.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075C18B8019900F2B67B /* greenMarble.png */; };
 		3EB6076018B8019900F2B67B /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075D18B8019900F2B67B /* grid.png */; };
-		3FF6BDCE1A1137FB006C029F /* grid2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6BDCD1A1137FB006C029F /* grid2.png */; };
+		3F158CFB1A11362A00BB26A5 /* TicTacToeBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F158CFA1A11362A00BB26A5 /* TicTacToeBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,8 @@
 		3EB6075B18B8019900F2B67B /* redMarble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redMarble.png; sourceTree = "<group>"; };
 		3EB6075C18B8019900F2B67B /* greenMarble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenMarble.png; sourceTree = "<group>"; };
 		3EB6075D18B8019900F2B67B /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
-		3FF6BDCD1A1137FB006C029F /* grid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid2.png; sourceTree = "<group>"; };
+		3F158CF91A11362A00BB26A5 /* TicTacToeBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicTacToeBrain.h; path = ../TicTacToeBrain.h; sourceTree = "<group>"; };
+		3F158CFA1A11362A00BB26A5 /* TicTacToeBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeBrain.m; path = ../TicTacToeBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				3F158CF91A11362A00BB26A5 /* TicTacToeBrain.h */,
+				3F158CF91A11362A00BB26A5 /* TicTacToeBrain.h */,
 				3F158CFA1A11362A00BB26A5 /* TicTacToeBrain.m */,
-				3EB6073518B8010B00F2B67B /* AppDelegate.h */,
 				3EB6073618B8010B00F2B67B /* AppDelegate.m */,
 				3EB6073818B8010B00F2B67B /* Main.storyboard */,
 				3EB6073B18B8010B00F2B67B /* ViewController.h */,
@@ -246,7 +247,6 @@
 				3EB6073118B8010B00F2B67B /* InfoPlist.strings in Resources */,
 				3EB6075E18B8019900F2B67B /* redMarble.png in Resources */,
 				3FF6BDCE1A1137FB006C029F /* grid2.png in Resources */,
-				3EB6075F18B8019900F2B67B /* greenMarble.png in Resources */,
 				3EB6073A18B8010B00F2B67B /* Main.storyboard in Resources */,
 				3EB6076018B8019900F2B67B /* grid.png in Resources */,
 			);
