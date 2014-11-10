@@ -32,16 +32,27 @@
 {
     int col = (int) [point CGPointValue].x;
     int row = (int) [point CGPointValue].y;
-//    NSLog(@"row= %d col = %d", row, col);
-    if (self.boardArray[row][col] != 0){
+    if ([self.boardArray[row][col] isEqual: @"0"]){
+        [self printArrays];
+        [self flipPlayer];
+        if (player==1){
+            self.boardArray[row][col] = @1;
+        }
+        if (player==2)
+            self.boardArray[row][col] = @2;
+        return true;
+        }
+    else{
         return FALSE;
     }
-    if (player==1)
-        self.boardArray[row][col] = @1;
-    if (player==2)
-        self.boardArray[row][col] = @2;
-    [self printArrays];
-    return true;
+
+//    return true;
+}
+
+-(void) flipPlayer
+{
+    NSLog(@"Called flip player");
+    self.player1Turn = !self.player1Turn;
 }
 
 @end

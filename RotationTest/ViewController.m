@@ -110,16 +110,27 @@ const int TOP_MARGIN = 50;
     gameStarted = YES;
     CGPoint bp = [tapObject locationInView:self.backView];
     int squareWidth = _widthOfSubsquare / 3;
+    int player=0;
+    if (self.tBrain.player1Turn){
+        player=1;
+    }
+    else
+    {
+     player=2;
+    }
     CGPoint tapInGrid = CGPointMake(bp.x/squareWidth, bp.y/squareWidth);
-    NSLog(@"Calling tapinGrid");
-    if([self.tBrain isValidTap:[NSValue valueWithCGPoint:tapInGrid] byPlayer:0]){
+    if(![self.tBrain isValidTap:[NSValue valueWithCGPoint:tapInGrid] byPlayer:player]){
+        NSLog(@"Invalid tap");
         return;
     }
-    NSLog(@"Done calling tapinGrid");
 
-    NSLog(@"tapped at: %@", NSStringFromCGPoint(bp) );
+    NSLog(@"Valid tap at: %@\n\n", NSStringFromCGPoint(bp) );
     // The board is divided into nine equally sized squares and thus width = height.
-    UIImageView *iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redMarble.png"]];
+    UIImageView *iView;
+    if (player == 1)
+        iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redMarble.png"]];
+    else
+        iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"greenMarble.png"]];
     iView.frame = CGRectMake((int) (bp.x / squareWidth) * squareWidth,
                              (int) (bp.y / squareWidth) * squareWidth,
                              squareWidth,
