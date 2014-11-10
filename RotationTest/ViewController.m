@@ -119,7 +119,11 @@ const int TOP_MARGIN = 50;
 
     NSLog(@"tapped at: %@", NSStringFromCGPoint(bp) );
     // The board is divided into nine equally sized squares and thus width = height.
-    UIImageView *iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redMarble.png"]];
+    UIImageView *iView;
+    if ([self.tBrain player1Turn])
+        iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redMarble.png"]];
+    else
+        iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"greenMarble.png"]];
     iView.frame = CGRectMake((int) (bp.x / squareWidth) * squareWidth,
                              (int) (bp.y / squareWidth) * squareWidth,
                              squareWidth,
