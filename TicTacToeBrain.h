@@ -13,5 +13,6 @@
 
 @property(nonatomic) NSMutableArray* boardArray;
 - (void) initialize;
+-(BOOL) isValidTap:(NSValue *) point byPlayer:(int)player;
 
 @end

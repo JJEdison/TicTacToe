@@ -11,7 +11,7 @@
 // that are placed in it.
 
 #import "ViewController.h"
-
+#import "TicTacToeBrain.h"
 const int BORDER_WIDTH = 10;
 const int TOP_MARGIN = 50;
 
@@ -30,15 +30,17 @@ const int TOP_MARGIN = 50;
 @property(nonatomic) CALayer *ballLayer;
 @property(nonatomic) UIView *backView;
 @property(nonatomic) NSMutableArray *balls;
-@end
 
-#import "TicTacToeBrain.h"
+@property (nonatomic, strong) TicTacToeBrain *tBrain;
+@end
 
 @implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tBrain = [[TicTacToeBrain alloc] init];
+    [self.tBrain initialize];
     
     gameStarted = NO;
     
@@ -107,9 +109,15 @@ const int TOP_MARGIN = 50;
     
     gameStarted = YES;
     CGPoint bp = [tapObject locationInView:self.backView];
+    int squareWidth = _widthOfSubsquare / 3;
+    CGPoint tapInGrid = CGPointMake(bp.x/squareWidth, bp.y/squareWidth);
+    NSLog(@"Calling tapinGrid");
+    if([self.tBrain isValidTap:[NSValue valueWithCGPoint:tapInGrid] byPlayer:0]){
+        return;
+    }
+    NSLog(@"Done calling tapinGrid");
 
     NSLog(@"tapped at: %@", NSStringFromCGPoint(bp) );
-    int squareWidth = _widthOfSubsquare / 3;
     // The board is divided into nine equally sized squares and thus width = height.
     UIImageView *iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redMarble.png"]];
     iView.frame = CGRectMake((int) (bp.x / squareWidth) * squareWidth,
