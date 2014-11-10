@@ -32,6 +32,8 @@ const int TOP_MARGIN = 50;
 @property(nonatomic) NSMutableArray *balls;
 @end
 
+#import "TicTacToeBrain.h"
+
 @implementation ViewController
 
 - (void)viewDidLoad
