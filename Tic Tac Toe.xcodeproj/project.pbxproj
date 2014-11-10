@@ -24,6 +24,7 @@
 		3EB6075E18B8019900F2B67B /* redMarble.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075B18B8019900F2B67B /* redMarble.png */; };
 		3EB6075F18B8019900F2B67B /* greenMarble.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075C18B8019900F2B67B /* greenMarble.png */; };
 		3EB6076018B8019900F2B67B /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075D18B8019900F2B67B /* grid.png */; };
+		3FF6BDCE1A1137FB006C029F /* grid2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6BDCD1A1137FB006C029F /* grid2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3EB6075B18B8019900F2B67B /* redMarble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redMarble.png; sourceTree = "<group>"; };
 		3EB6075C18B8019900F2B67B /* greenMarble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenMarble.png; sourceTree = "<group>"; };
 		3EB6075D18B8019900F2B67B /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
+		3FF6BDCD1A1137FB006C029F /* grid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				3EB6075B18B8019900F2B67B /* redMarble.png */,
 				3EB6075C18B8019900F2B67B /* greenMarble.png */,
 				3EB6075D18B8019900F2B67B /* grid.png */,
+				3FF6BDCD1A1137FB006C029F /* grid2.png */,
 				3EB6072E18B8010B00F2B67B /* Tic Tac Toe-Info.plist */,
 				3EB6072F18B8010B00F2B67B /* InfoPlist.strings */,
 				3EB6073218B8010B00F2B67B /* main.m */,
@@ -240,6 +243,7 @@
 				3EB6073F18B8010B00F2B67B /* Images.xcassets in Resources */,
 				3EB6073118B8010B00F2B67B /* InfoPlist.strings in Resources */,
 				3EB6075E18B8019900F2B67B /* redMarble.png in Resources */,
+				3FF6BDCE1A1137FB006C029F /* grid2.png in Resources */,
 				3EB6075F18B8019900F2B67B /* greenMarble.png in Resources */,
 				3EB6073A18B8010B00F2B67B /* Main.storyboard in Resources */,
 				3EB6076018B8019900F2B67B /* grid.png in Resources */,

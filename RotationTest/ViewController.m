@@ -70,7 +70,7 @@ const int TOP_MARGIN = 50;
     [self.gridView addGestureRecognizer:self.tapGest];
     
     self.gridImageView.frame = CGRectMake(0, 0, size, size);
-    UIImage *image = [UIImage imageNamed:@"grid.png"];
+    UIImage *image = [UIImage imageNamed:@"grid2.png"];
     self.gridImageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, size, size)];
     [self.gridImageView setImage:image];
     [self.gridView addSubview:self.gridImageView];
