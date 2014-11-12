@@ -54,5 +54,19 @@
     NSLog(@"Called flip player");
     self.player1Turn = !self.player1Turn;
 }
+-(int) isThereAWinner {
+    int i=0; int j=0;
+    int countToThree=0;
+    //Horizantal
+    for(i=0; i<3;i++){
+        for(j=0; j<3; j++){
+            if ([self.boardArray[i][j] isEqual: @1]){
+                countToThree += 1;
+            }
+        }
+    }
+    return 0;
+}
+
 
 @end
