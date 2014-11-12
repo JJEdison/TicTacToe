@@ -12,6 +12,7 @@
 
 #import "ViewController.h"
 #import "TicTacToeBrain.h"
+#import "TicTacToeDataSource.h"
 const int BORDER_WIDTH = 10;
 const int TOP_MARGIN = 50;
 
@@ -30,6 +31,7 @@ const int TOP_MARGIN = 50;
 @property(nonatomic) CALayer *ballLayer;
 @property(nonatomic) UIView *backView;
 @property(nonatomic) NSMutableArray *balls;
+@property(nonatomic) TicTacToeDataSource *dataSource;
 
 @property (nonatomic, strong) TicTacToeBrain *tBrain;
 @end
@@ -117,9 +119,6 @@ const int TOP_MARGIN = 50;
                              (int) (bp.y / squareWidth) * squareWidth,
                              squareWidth,
                              squareWidth);
-    
-    
-    
     self.ballLayer = [CALayer layer];
     [self.ballLayer addSublayer: iView.layer];
     self.ballLayer.frame = CGRectMake(0, 0, _widthOfSubsquare, _widthOfSubsquare);
@@ -129,6 +128,31 @@ const int TOP_MARGIN = 50;
         self.ballLayer.affineTransform = CGAffineTransformIdentity;
     [self.gridView.layer addSublayer:self.ballLayer];
     [self.balls addObject:iView];
+//    stringToPass = self.tBrain.boardArray[0]
+    
+    
+    NSString * arrayString = [self.tBrain.boardArray componentsJoinedByString:@", "];
+    NSLog(arrayString);
+    NSString * baseString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=";
+
+
+    
+   
+    
+    
+
+    NSString *ticTacToeString = [baseString stringByAppendingString:arrayString];
+    NSLog(baseString);
+
+//    NSString *ticTacToeString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=yoo";
+    
+    self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:ticTacToeString];
+
+    
+    
+    
+    
+    
 }
 
 

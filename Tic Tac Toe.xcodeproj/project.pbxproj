@@ -22,9 +22,10 @@
 		3EB6075018B8010B00F2B67B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6074E18B8010B00F2B67B /* InfoPlist.strings */; };
 		3EB6075218B8010B00F2B67B /* RotationTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB6075118B8010B00F2B67B /* RotationTestTests.m */; };
 		3EB6075E18B8019900F2B67B /* redMarble.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075B18B8019900F2B67B /* redMarble.png */; };
-		3EB6075F18B8019900F2B67B /* greenMarble.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075C18B8019900F2B67B /* greenMarble.png */; };
 		3EB6076018B8019900F2B67B /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB6075D18B8019900F2B67B /* grid.png */; };
 		3F158CFB1A11362A00BB26A5 /* TicTacToeBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F158CFA1A11362A00BB26A5 /* TicTacToeBrain.m */; };
+		3F91C62F1A13DD630017EED5 /* DownloadAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C62D1A13DD630017EED5 /* DownloadAssistant.m */; };
+		3F91C6321A13E0CD0017EED5 /* TicTacToeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F91C6311A13E0CD0017EED5 /* TicTacToeDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,6 @@
 		3EB6073018B8010B00F2B67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EB6073218B8010B00F2B67B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3EB6073418B8010B00F2B67B /* RotationTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RotationTest-Prefix.pch"; sourceTree = "<group>"; };
-		3EB6073518B8010B00F2B67B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EB6073618B8010B00F2B67B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3EB6073918B8010B00F2B67B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EB6073B18B8010B00F2B67B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -62,6 +62,10 @@
 		3EB6075D18B8019900F2B67B /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
 		3F158CF91A11362A00BB26A5 /* TicTacToeBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicTacToeBrain.h; path = ../TicTacToeBrain.h; sourceTree = "<group>"; };
 		3F158CFA1A11362A00BB26A5 /* TicTacToeBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeBrain.m; path = ../TicTacToeBrain.m; sourceTree = "<group>"; };
+		3F91C62D1A13DD630017EED5 /* DownloadAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAssistant.m; sourceTree = "<group>"; };
+		3F91C62E1A13DD630017EED5 /* DownloadAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAssistant.h; sourceTree = "<group>"; };
+		3F91C6301A13E0CD0017EED5 /* TicTacToeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToeDataSource.h; sourceTree = "<group>"; };
+		3F91C6311A13E0CD0017EED5 /* TicTacToeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacToeDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 		3EB6072C18B8010B00F2B67B /* RotationTest */ = {
 			isa = PBXGroup;
 			children = (
+				3F91C62D1A13DD630017EED5 /* DownloadAssistant.m */,
+				3F91C62E1A13DD630017EED5 /* DownloadAssistant.h */,
 				3F158CF91A11362A00BB26A5 /* TicTacToeBrain.h */,
 				3F158CF91A11362A00BB26A5 /* TicTacToeBrain.h */,
 				3F158CFA1A11362A00BB26A5 /* TicTacToeBrain.m */,
@@ -130,6 +136,8 @@
 				3EB6073C18B8010B00F2B67B /* ViewController.m */,
 				3EB6073E18B8010B00F2B67B /* Images.xcassets */,
 				3EB6072D18B8010B00F2B67B /* Supporting Files */,
+				3F91C6301A13E0CD0017EED5 /* TicTacToeDataSource.h */,
+				3F91C6311A13E0CD0017EED5 /* TicTacToeDataSource.m */,
 			);
 			path = RotationTest;
 			sourceTree = "<group>";
@@ -140,7 +148,6 @@
 				3EB6075B18B8019900F2B67B /* redMarble.png */,
 				3EB6075C18B8019900F2B67B /* greenMarble.png */,
 				3EB6075D18B8019900F2B67B /* grid.png */,
-				3FF6BDCD1A1137FB006C029F /* grid2.png */,
 				3EB6072E18B8010B00F2B67B /* Tic Tac Toe-Info.plist */,
 				3EB6072F18B8010B00F2B67B /* InfoPlist.strings */,
 				3EB6073218B8010B00F2B67B /* main.m */,
@@ -246,7 +253,6 @@
 				3EB6073F18B8010B00F2B67B /* Images.xcassets in Resources */,
 				3EB6073118B8010B00F2B67B /* InfoPlist.strings in Resources */,
 				3EB6075E18B8019900F2B67B /* redMarble.png in Resources */,
-				3FF6BDCE1A1137FB006C029F /* grid2.png in Resources */,
 				3EB6073A18B8010B00F2B67B /* Main.storyboard in Resources */,
 				3EB6076018B8019900F2B67B /* grid.png in Resources */,
 			);
@@ -270,7 +276,9 @@
 				3EB6073D18B8010B00F2B67B /* ViewController.m in Sources */,
 				3EB6073718B8010B00F2B67B /* AppDelegate.m in Sources */,
 				3EB6073318B8010B00F2B67B /* main.m in Sources */,
+				3F91C6321A13E0CD0017EED5 /* TicTacToeDataSource.m in Sources */,
 				3F158CFB1A11362A00BB26A5 /* TicTacToeBrain.m in Sources */,
+				3F91C62F1A13DD630017EED5 /* DownloadAssistant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
