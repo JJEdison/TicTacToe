@@ -129,6 +129,8 @@ const int TOP_MARGIN = 50;
         self.ballLayer.affineTransform = CGAffineTransformIdentity;
     [self.gridView.layer addSublayer:self.ballLayer];
     [self.balls addObject:iView];
+    
+    [self.tBrain isThereAWinner];
 }
 
 

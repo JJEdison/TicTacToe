@@ -33,7 +33,7 @@
     int col = (int) [point CGPointValue].x;
     int row = (int) [point CGPointValue].y;
     if ([self.boardArray[row][col] isEqual: @"0"]){
-        [self printArrays];
+        //[self printArrays];
         [self flipPlayer];
         if (player==1){
             self.boardArray[row][col] = @1;
@@ -54,17 +54,105 @@
     NSLog(@"Called flip player");
     self.player1Turn = !self.player1Turn;
 }
+
 -(int) isThereAWinner {
-    int i=0; int j=0;
-    int countToThree=0;
-    //Horizantal
-    for(i=0; i<3;i++){
-        for(j=0; j<3; j++){
-            if ([self.boardArray[i][j] isEqual: @1]){
+    if (([self.boardArray[0][0] isEqual: @1] && [self.boardArray[1][0] isEqual: @1] && [self.boardArray[2][0] isEqual: @1]) ||
+        ([self.boardArray[0][1] isEqual: @1] && [self.boardArray[1][1] isEqual: @1] && [self.boardArray[2][1] isEqual: @1]) ||
+        ([self.boardArray[0][2] isEqual: @1] && [self.boardArray[1][2] isEqual: @1] && [self.boardArray[2][2] isEqual: @1]) ||
+        
+        ([self.boardArray[0][0] isEqual: @1] && [self.boardArray[0][1] isEqual: @1] && [self.boardArray[0][2] isEqual: @1]) ||
+        ([self.boardArray[1][0] isEqual: @1] && [self.boardArray[1][1] isEqual: @1] && [self.boardArray[1][2] isEqual: @1]) ||
+        ([self.boardArray[2][0] isEqual: @1] && [self.boardArray[2][1] isEqual: @1] && [self.boardArray[2][2] isEqual: @1]) ||
+        
+        ([self.boardArray[0][0] isEqual: @1] && [self.boardArray[1][1] isEqual: @1] && [self.boardArray[2][2] isEqual: @1]) ||
+        ([self.boardArray[2][0] isEqual: @1] && [self.boardArray[1][1] isEqual: @1] && [self.boardArray[0][2] isEqual: @1]) )
+        return 1;
+    
+    if (([self.boardArray[0][0] isEqual: @2] && [self.boardArray[1][0] isEqual: @2] && [self.boardArray[2][0] isEqual: @2]) ||
+        ([self.boardArray[0][1] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[2][1] isEqual: @2]) ||
+        ([self.boardArray[0][2] isEqual: @2] && [self.boardArray[1][2] isEqual: @2] && [self.boardArray[2][2] isEqual: @2]) ||
+        
+        ([self.boardArray[0][0] isEqual: @2] && [self.boardArray[0][1] isEqual: @2] && [self.boardArray[0][2] isEqual: @2]) ||
+        ([self.boardArray[1][0] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[1][2] isEqual: @2]) ||
+        ([self.boardArray[2][0] isEqual: @2] && [self.boardArray[2][1] isEqual: @2] && [self.boardArray[2][2] isEqual: @2]) ||
+        
+        ([self.boardArray[0][0] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[2][2] isEqual: @2]) ||
+        ([self.boardArray[2][0] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[0][2] isEqual: @2]) )
+        return 2;
+
+    
+    
+     /*int countToThree;
+     
+    //Vertical
+    for (int i = 0; i < 3; i++) {
+        countToThree = 0;
+        for (int j = 0; j < 3; j++) {
+            if ([self.boardArray[i][j] isEqual: @1])
                 countToThree += 1;
-            }
+            else if ([self.boardArray[i][j] isEqual: @2])
+                countToThree -= 1;
         }
+        
+        if (countToThree == 3 || countToThree == -3)
+            return [self checkWin:countToThree];
     }
+    
+    //Horizontal
+    for (int i = 0; i < 3; i++) {
+        countToThree = 0;
+        for (int j = 0; j < 3; j++) {
+            if ([self.boardArray[j][i] isEqual: @1])
+                countToThree += 1;
+            else if ([self.boardArray[j][i] isEqual: @2])
+                countToThree -= 1;
+        }
+        
+        if (countToThree == 3 || countToThree == -3)
+            return [self checkWin:countToThree];
+    }
+    
+    //DiagonalR
+    countToThree = 0;
+    for (int i = 0; i < 3; i++) {
+        if ([self.boardArray[i][i] isEqual: @1])
+            countToThree += 1;
+        else if ([self.boardArray[i][i] isEqual: @2])
+            countToThree -= 1;
+            
+        if (countToThree == 3 || countToThree == -3)
+            return [self checkWin:countToThree];
+    }
+        
+    //DiagonalL
+    for (int i = 0; i < 3; i++) {
+        countToThree = 0;
+        for (int j = 2; j > -1; j--) {
+            if ([self.boardArray[i][j] isEqual: @1])
+                countToThree += 1;
+            else if ([self.boardArray[i][j] isEqual: @2])
+                countToThree -= 1;
+        }
+            
+        if (countToThree == 3 || countToThree == -3)
+            return [self checkWin:countToThree];
+    }*/
+    
+    return 0;
+}
+
+-(int) checkWin: (int) value;
+{
+    if (value == 3) {
+        NSLog(@"PLAYER 1 WIN");
+        return 1;
+    }
+    
+    if (value == -3) {
+        NSLog(@"PLAYER 2 WIN");
+        return 2;
+    }
+    
     return 0;
 }
 
