@@ -7,7 +7,12 @@
 //
 
 #import "TicTacToeBrain.h"
-
+#import "TicTacToeDataSource.h"
+@interface TicTacToeBrain ();
+@property(nonatomic) TicTacToeDataSource *dataSource;
+@property(nonatomic) NSString *arrayString;
+@property(nonatomic) NSTimer *timer;
+@end
 @implementation TicTacToeBrain
 -(void) initialize
 {
@@ -49,11 +54,32 @@
 //    return true;
 }
 
+-(void) sendData
+{
+    self.arrayString = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@", self.boardArray[0][0], self.boardArray[0][1], self.boardArray[0][2],self.boardArray[1][0], self.boardArray[1][1], self.boardArray[1][2],self.boardArray[2][0], self.boardArray[2][1], self.boardArray[2][2]];
+    NSLog(@"ARRAY STRING: %@", self.arrayString);
+    NSString * baseString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=";
+    NSString * ticTacToeString = ([NSString stringWithFormat:@"%@%@", baseString, self.arrayString]);
+    //    NSString *ticTacToeString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=yoo";
+    self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:ticTacToeString];
+    
+}
 -(void) flipPlayer
 {
     NSLog(@"Called flip player");
     self.player1Turn = !self.player1Turn;
+    
+    if (!self.player1Turn)
+        _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(checkOpponentActivity) userInfo:nil repeats: YES];
 }
+
+-(bool) checkOpponentActivity
+{
+    NSLog(@"================================================");
+    
+    return true;
+}
+
 -(int) isThereAWinner {
     int i=0; int j=0;
     int countToThree=0;

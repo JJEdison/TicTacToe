@@ -107,7 +107,7 @@ const int TOP_MARGIN = 50;
         NSLog(@"Invalid tap");
         return;
     }
-
+    [self.tBrain sendData];
     NSLog(@"Valid tap at: %@\n\n", NSStringFromCGPoint(bp) );
     // The board is divided into nine equally sized squares and thus width = height.
     UIImageView *iView;
@@ -128,30 +128,6 @@ const int TOP_MARGIN = 50;
         self.ballLayer.affineTransform = CGAffineTransformIdentity;
     [self.gridView.layer addSublayer:self.ballLayer];
     [self.balls addObject:iView];
-//    stringToPass = self.tBrain.boardArray[0]
-    
-    
-    NSString * arrayString = [self.tBrain.boardArray componentsJoinedByString:@", "];
-    NSLog(arrayString);
-    NSString * baseString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=";
-
-
-    
-   
-    
-    
-
-    NSString *ticTacToeString = [baseString stringByAppendingString:arrayString];
-    NSLog(baseString);
-
-//    NSString *ticTacToeString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=yoo";
-    
-    self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:ticTacToeString];
-
-    
-    
-    
-    
     
 }
 
