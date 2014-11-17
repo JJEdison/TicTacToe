@@ -17,6 +17,7 @@
 
 @end
 @implementation TicTacToeBrain
+
 -(void) initialize
 {
     self.player1Turn=YES;
@@ -75,6 +76,9 @@
 
 -(bool) checkOpponentActivity
 {
+    if (self.player1Turn)
+        return false;
+    
     NSLog(@"================================================");
     NSString *temp = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py";
     self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:temp];
@@ -100,6 +104,12 @@
 {
     _opponentArrayString = string;
     NSLog(@"Opponent String: %@", _opponentArrayString);
+}
+
+-(void) setNewBoard
+{
+    // Set boardArray based on opponentArrayString
+    
 }
 
 

@@ -16,5 +16,6 @@
 -(BOOL) isValidTap:(NSValue *) point byPlayer:(int)player;
 -(void) sendData;
 -(void) setOpponentArrayString: (NSString *) string;
+-(void) setNewBoard;
 
 @end
