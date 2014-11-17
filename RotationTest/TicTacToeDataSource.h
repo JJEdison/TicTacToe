@@ -20,6 +20,7 @@
 @property (nonatomic) BOOL dataReadyForUse;
 
 -(instancetype) initWithbArrayURLString: (NSString *) bURL;
+-(DownloadAssistant *) getDownloadAss;
 
 
 @end

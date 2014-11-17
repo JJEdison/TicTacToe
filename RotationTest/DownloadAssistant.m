@@ -7,12 +7,14 @@
 //
 
 #import "DownloadAssistant.h"
+#import "TicTacToeBrain.h"
 
 @interface DownloadAssistant()
 
 @property (nonatomic) NSMutableData *inData;
 @property (nonatomic) NSURLConnection *conn;
 @property (nonatomic, strong) NSURL *url;
+@property (nonatomic) TicTacToeBrain *tBrain;
 
 @end
 
@@ -40,27 +42,27 @@
 
 // Called each time some data arrives.
 -(void) connection:(NSURLConnection *) connection didReceiveData:(NSData *)data {
-    NSLog( @"received %d bytes.", [data length]);
     [_inData appendData: data];
 }
 
 // Called when last segment arrives.
 -(void) connectionDidFinishLoading: (NSURLConnection *) connection {
+    self.tBrain = [[TicTacToeBrain alloc] init];
+    [self.tBrain initialize];
+    
     NSLog( @"Finished download." );
-    NSLog( @"The file has %d bytes.", [_inData length]);
     NSString *string = [[NSString alloc] initWithData:_inData encoding:NSUTF8StringEncoding];
-    NSLog( @"%@", string);
     if( [self.delegate respondsToSelector:@selector(acceptWebData:forURL:)] )
         [self.delegate acceptWebData:_inData forURL:_url];
     _inData = nil;
-        
+    
+    [_tBrain setOpponentArrayString:string];
 }
 
 // Called if the fetch fails.
--(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+-(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *) error {
     NSLog( @"Connection failed: %@", error );
     _inData = nil;
 }
-
 
 @end

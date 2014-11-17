@@ -37,5 +37,10 @@
     return self;
 }
 
+-(DownloadAssistant *) getDownloadAss
+{
+    return _downloadAssitant;
+}
+
 
 @end

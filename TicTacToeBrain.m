@@ -8,15 +8,17 @@
 
 #import "TicTacToeBrain.h"
 #import "TicTacToeDataSource.h"
+
 @interface TicTacToeBrain ();
 @property(nonatomic) TicTacToeDataSource *dataSource;
 @property(nonatomic) NSString *arrayString;
+@property(nonatomic) NSString *opponentArrayString;
 @property(nonatomic) NSTimer *timer;
+
 @end
 @implementation TicTacToeBrain
 -(void) initialize
 {
-    NSLog(@"In function init");
     self.player1Turn=YES;
     if (self.boardArray == nil){
         self.boardArray = [[NSMutableArray alloc] initWithCapacity:3];
@@ -37,7 +39,7 @@
 {
     int col = (int) [point CGPointValue].x;
     int row = (int) [point CGPointValue].y;
-    if ([self.boardArray[row][col] isEqual: @"0"]){
+    if ([self.boardArray[row][col] isEqual: @"0"]) {
         [self printArrays];
         [self flipPlayer];
         if (player==1){
@@ -50,17 +52,15 @@
     else{
         return FALSE;
     }
-
-//    return true;
 }
 
 -(void) sendData
 {
     self.arrayString = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@", self.boardArray[0][0], self.boardArray[0][1], self.boardArray[0][2],self.boardArray[1][0], self.boardArray[1][1], self.boardArray[1][2],self.boardArray[2][0], self.boardArray[2][1], self.boardArray[2][2]];
-    NSLog(@"ARRAY STRING: %@", self.arrayString);
+
     NSString * baseString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=";
     NSString * ticTacToeString = ([NSString stringWithFormat:@"%@%@", baseString, self.arrayString]);
-    //    NSString *ticTacToeString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=yoo";
+
     self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:ticTacToeString];
     
 }
@@ -76,7 +76,9 @@
 -(bool) checkOpponentActivity
 {
     NSLog(@"================================================");
-    
+    NSString *temp = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py";
+    self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:temp];
+
     return true;
 }
 
@@ -92,6 +94,12 @@
         }
     }
     return 0;
+}
+
+-(void) setOpponentArrayString: (NSString *) string
+{
+    _opponentArrayString = string;
+    NSLog(@"Opponent String: %@", _opponentArrayString);
 }
 
 
