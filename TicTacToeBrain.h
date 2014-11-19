@@ -10,11 +10,12 @@
 
 @interface TicTacToeBrain : NSObject
 @property (nonatomic) BOOL player1Turn;
-
+@property(nonatomic) NSString *arrayString;
 @property(nonatomic) NSMutableArray* boardArray;
 - (void) initialize;
 -(BOOL) isValidTap:(NSValue *) point byPlayer:(int)player;
 -(void) sendData;
+-(void) printArrays;
 -(void) setOpponentArrayString: (NSString *) string;
 -(void) setNewBoard;
 

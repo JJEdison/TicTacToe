@@ -11,7 +11,6 @@
 
 @interface TicTacToeBrain ();
 @property(nonatomic) TicTacToeDataSource *dataSource;
-@property(nonatomic) NSString *arrayString;
 @property(nonatomic) NSString *opponentArrayString;
 @property(nonatomic) NSTimer *timer;
 
@@ -104,12 +103,23 @@
 {
     _opponentArrayString = string;
     NSLog(@"Opponent String: %@", _opponentArrayString);
+    
+    if (self.arrayString isEqualToString:_opponentArrayString) {
+        [self setNewBoard];
+        _player1Turn = true;
+    }
 }
 
 -(void) setNewBoard
 {
     // Set boardArray based on opponentArrayString
-    
+    int count = 0;
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            self.boardArray[j][i] = @([_opponentArrayString characterAtIndex:count]);
+            count += 1;
+        }
+    }
 }
 
 

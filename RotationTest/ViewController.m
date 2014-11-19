@@ -87,7 +87,33 @@ const int TOP_MARGIN = 50;
     return _tapGest;
 }
 
+-(void) setBoardBasedOnArray
+{
+    UIImageView *iView;
+    int squareWidth = _widthOfSubsquare / 3;
+    
+    [self.tBrain printArrays];
+    for(int j = 0; j < 3; j++) {
+        for(int i = 0; i < 3; i++) {
+            if ([self.tBrain.boardArray[j][i] isEqual: @1]){
+                iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redMarble.png"]];
+            } else if ([self.tBrain.boardArray[j][i] isEqual: @2]){
+                iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"greenMarble.png"]];
+            } else {
+                iView = NULL;
+            }
 
+            if (iView == NULL)
+                continue;
+            
+            iView.frame = CGRectMake(i * squareWidth, j * squareWidth, squareWidth, squareWidth);
+            
+            self.ballLayer = [CALayer layer];
+            [self.ballLayer addSublayer: iView.layer];
+            [self.gridView.layer addSublayer:self.ballLayer];
+        }
+    }
+}
 
 -(void) didTapTheView: (UITapGestureRecognizer *) tapObject
 {
@@ -108,27 +134,7 @@ const int TOP_MARGIN = 50;
         return;
     }
     [self.tBrain sendData];
-    NSLog(@"Valid tap at: %@\n\n", NSStringFromCGPoint(bp) );
-    // The board is divided into nine equally sized squares and thus width = height.
-    UIImageView *iView;
-    if (player == 1)
-        iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redMarble.png"]];
-    else
-        iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"greenMarble.png"]];
-    iView.frame = CGRectMake((int) (bp.x / squareWidth) * squareWidth,
-                             (int) (bp.y / squareWidth) * squareWidth,
-                             squareWidth,
-                             squareWidth);
-    self.ballLayer = [CALayer layer];
-    [self.ballLayer addSublayer: iView.layer];
-    self.ballLayer.frame = CGRectMake(0, 0, _widthOfSubsquare, _widthOfSubsquare);
-    if( [self.balls count] > 0 )
-        self.ballLayer.affineTransform = ((UIImageView *) self.balls[0]).layer.affineTransform;
-    else
-        self.ballLayer.affineTransform = CGAffineTransformIdentity;
-    [self.gridView.layer addSublayer:self.ballLayer];
-    [self.balls addObject:iView];
-    
+    [self setBoardBasedOnArray];
 }
 
 
