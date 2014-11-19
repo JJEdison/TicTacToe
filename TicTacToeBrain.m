@@ -8,9 +8,11 @@
 
 #import "TicTacToeBrain.h"
 #import "TicTacToeDataSource.h"
+#import "ViewController.h"
 
 @interface TicTacToeBrain ();
 @property(nonatomic) TicTacToeDataSource *dataSource;
+@property(nonatomic) ViewController *vc;
 @property(nonatomic) NSString *opponentArrayString;
 @property(nonatomic) NSTimer *timer;
 
@@ -26,6 +28,7 @@
         [self.boardArray insertObject:[NSMutableArray arrayWithObjects:@"0",@"0",@"0",nil] atIndex:1];
         [self.boardArray insertObject:[NSMutableArray arrayWithObjects:@"0",@"0",@"0",nil] atIndex:2];
     }
+    self.vc = [[ViewController alloc] init];
 }
 -(void) printArrays
 {
@@ -104,7 +107,8 @@
     _opponentArrayString = string;
     NSLog(@"Opponent String: %@", _opponentArrayString);
     
-    if (self.arrayString isEqualToString:_opponentArrayString) {
+    if ([self.arrayString isEqualToString:_opponentArrayString]) {
+        NSLog(@"DIFFERENT BOARDS");
         [self setNewBoard];
         _player1Turn = true;
     }
@@ -113,10 +117,12 @@
 -(void) setNewBoard
 {
     // Set boardArray based on opponentArrayString
+    NSLog(@"SET NEW BOARD");
     int count = 0;
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
             self.boardArray[j][i] = @([_opponentArrayString characterAtIndex:count]);
+            [_vc setBoardBasedOnArray];
             count += 1;
         }
     }
