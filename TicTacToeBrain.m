@@ -29,7 +29,23 @@
         [self.boardArray insertObject:[NSMutableArray arrayWithObjects:@"0",@"0",@"0",nil] atIndex:2];
     }
     self.vc = [[ViewController alloc] init];
+    self.dataSource = [[TicTacToeDataSource alloc] initializeWithBrain: self];
+
 }
+
+-(void) initializeWithVC: (ViewController *) v
+{
+    self.player1Turn=YES;
+    if (self.boardArray == nil){
+        self.boardArray = [[NSMutableArray alloc] initWithCapacity:3];
+        [self.boardArray insertObject:[NSMutableArray arrayWithObjects:@"0",@"0",@"0",nil] atIndex:0];
+        [self.boardArray insertObject:[NSMutableArray arrayWithObjects:@"0",@"0",@"0",nil] atIndex:1];
+        [self.boardArray insertObject:[NSMutableArray arrayWithObjects:@"0",@"0",@"0",nil] atIndex:2];
+    }
+    self.vc = v;
+    self.dataSource = [[TicTacToeDataSource alloc] initializeWithBrain: self];
+}
+
 -(void) printArrays
 {
     NSLog(@"Quad 0");
@@ -40,9 +56,19 @@
 //add the quadrant then fill in the array
 -(BOOL) isValidTap:(NSValue *) point byPlayer:(int)player
 {
+    if (player==1){
+        NSLog(@"Player1 turn");
+    }
+    if (player==2)
+        NSLog(@"Player2 turn");
+    
     int col = (int) [point CGPointValue].x;
     int row = (int) [point CGPointValue].y;
-    if ([self.boardArray[row][col] isEqual: @"0"]) {
+    [self printArrays];
+    NSLog(@"%@", @[self.boardArray[row][col]]);
+    if ([self.boardArray[row][col] isEqual: @"0"] || [self.boardArray[row][col] isEqual: @0] ) {
+        NSLog(@"Yuppeee");
+
         [self printArrays];
         [self flipPlayer];
         if (player==1){
@@ -59,12 +85,15 @@
 
 -(void) sendData
 {
+    //[self.dataSource getBrain: self];
     self.arrayString = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@", self.boardArray[0][0], self.boardArray[0][1], self.boardArray[0][2],self.boardArray[1][0], self.boardArray[1][1], self.boardArray[1][2],self.boardArray[2][0], self.boardArray[2][1], self.boardArray[2][2]];
+    NSLog(@"arrayString in sendData: %@,", self.arrayString);
 
     NSString * baseString = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=";
     NSString * ticTacToeString = ([NSString stringWithFormat:@"%@%@", baseString, self.arrayString]);
 
-    self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:ticTacToeString];
+//    self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:ticTacToeString];
+    [self.dataSource arrayURLString:ticTacToeString];
     
 }
 -(void) flipPlayer
@@ -83,7 +112,8 @@
     
     NSLog(@"================================================");
     NSString *temp = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py";
-    self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:temp];
+    //self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:temp];
+    [self.dataSource arrayURLString:temp];
 
     return true;
 }
@@ -104,13 +134,15 @@
 
 -(void) setOpponentArrayString: (NSString *) string
 {
+    string = [string stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     _opponentArrayString = string;
-    NSLog(@"Opponent String: %@", _opponentArrayString);
     
-    if ([self.arrayString isEqualToString:_opponentArrayString]) {
+    NSLog(@"Opponent String: ->%@<-", self.opponentArrayString);
+    NSLog(@"arrayString : ->%@<-", self.arrayString);
+    if (![self.arrayString isEqualToString: self.opponentArrayString]) {
         NSLog(@"DIFFERENT BOARDS");
-        [self setNewBoard];
         _player1Turn = true;
+        [self setNewBoard];
     }
 }
 
@@ -121,11 +153,13 @@
     int count = 0;
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-            self.boardArray[j][i] = @([_opponentArrayString characterAtIndex:count]);
+            NSLog(@"Char: %hu", (int)[_opponentArrayString characterAtIndex:count]-48);
+            self.boardArray[i][j] = @((int)[_opponentArrayString characterAtIndex:count]-48);
             [_vc setBoardBasedOnArray];
             count += 1;
         }
     }
+    [self printArrays];
 }
 
 

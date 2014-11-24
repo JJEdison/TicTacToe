@@ -42,7 +42,8 @@ const int TOP_MARGIN = 50;
 {
     [super viewDidLoad];
     self.tBrain = [[TicTacToeBrain alloc] init];
-    [self.tBrain initialize];
+    //[self.tBrain initialize];
+    [self.tBrain initializeWithVC: self];
     
     gameStarted = NO;
     
@@ -92,7 +93,7 @@ const int TOP_MARGIN = 50;
     UIImageView *iView;
     int squareWidth = _widthOfSubsquare / 3;
     
-    [self.tBrain printArrays];
+//    [self.tBrain printArrays];
     for(int j = 0; j < 3; j++) {
         for(int i = 0; i < 3; i++) {
             if ([self.tBrain.boardArray[j][i] isEqual: @1]){

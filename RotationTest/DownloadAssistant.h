@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TicTacToeBrain.h"
 
 @protocol WebDataReadyDelegate;
 
@@ -16,6 +17,8 @@
 
 -(void) downloadContentsOfURL: (NSURL *) url;
 -(NSData *) downloadedData;
+-(void) getBrain: (TicTacToeBrain *) b;
+-(instancetype) initializeWithBrain: (TicTacToeBrain *) b;
 
 @end
 

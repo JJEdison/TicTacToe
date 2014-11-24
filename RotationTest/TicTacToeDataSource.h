@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DownloadAssistant.h"
+#import "TicTacToeDataSource.h"
 
 @protocol DataSourceReadyForUseDelegate;
 
@@ -20,7 +21,10 @@
 @property (nonatomic) BOOL dataReadyForUse;
 
 -(instancetype) initWithbArrayURLString: (NSString *) bURL;
+-(instancetype) initializeWithBrain: (TicTacToeBrain *) b;
+-(void) arrayURLString: (NSString *) bURL;
 -(DownloadAssistant *) getDownloadAss;
+-(void) getBrain: (TicTacToeBrain *) b;
 
 
 @end

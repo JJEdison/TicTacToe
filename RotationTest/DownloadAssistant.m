@@ -47,8 +47,8 @@
 
 // Called when last segment arrives.
 -(void) connectionDidFinishLoading: (NSURLConnection *) connection {
-    self.tBrain = [[TicTacToeBrain alloc] init];
-    [self.tBrain initialize];
+//    self.tBrain = [[TicTacToeBrain alloc] init];
+//    [self.tBrain initialize];
     
     NSLog( @"Finished download." );
     NSString *string = [[NSString alloc] initWithData:_inData encoding:NSUTF8StringEncoding];
@@ -63,6 +63,19 @@
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *) error {
     NSLog( @"Connection failed: %@", error );
     _inData = nil;
+}
+
+-(void) getBrain: (TicTacToeBrain *) b {
+    self.tBrain = [[TicTacToeBrain alloc] init];
+    [self.tBrain initialize];
+//    self.tBrain = [[TicTacToeBrain alloc] init];
+    _tBrain = b;
+}
+
+-(instancetype) initializeWithBrain: (TicTacToeBrain *) b
+{
+    self.tBrain = b;
+    return self;
 }
 
 @end
