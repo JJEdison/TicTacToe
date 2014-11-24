@@ -21,6 +21,11 @@
 
 -(void) initialize
 {
+    /*
+     Each player starts polling for a blank board, each can make a move. Whoever goes first starts the game. Second player stops initial polling and starts polling as usual for difference. WIP
+     */
+    self.LOOK UP
+    
     self.player1Turn=YES;
     if (self.boardArray == nil){
         self.boardArray = [[NSMutableArray alloc] initWithCapacity:3];
