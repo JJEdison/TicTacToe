@@ -52,7 +52,7 @@
     [self.dataSource arrayURLString:@"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=000000000"];
     self.arrayString = @"000000000";
     self.timer2 = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(checkStart) userInfo:nil repeats: YES];
-
+    self.p = 0;
 }
 
 -(void) printArrays
@@ -65,6 +65,9 @@
 //add the quadrant then fill in the array
 -(BOOL) isValidTap:(NSValue *) point byPlayer:(int)player
 {
+    if (self.p == 0)
+        self.p = 1;
+    
     if (player==1){
         NSLog(@"Player1 turn");
     }
@@ -80,10 +83,10 @@
 
         [self printArrays];
         [self flipPlayer];
-        if (player==1){
+        if (self.p==1){
             self.boardArray[row][col] = @1;
         }
-        if (player==2)
+        if (self.p==2)
             self.boardArray[row][col] = @2;
         return true;
         }
@@ -161,6 +164,8 @@
     NSLog(@"arrayString : ->%@<-", self.arrayString);
     if (![self.arrayString isEqualToString: self.opponentArrayString]) {
         NSLog(@"DIFFERENT BOARDS");
+        if (self.p == 0)
+            self.p = 2;
         _player1Turn = true;
         [self setNewBoard];
         [self.timer2 invalidate];
