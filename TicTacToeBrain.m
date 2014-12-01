@@ -15,6 +15,7 @@
 @property(nonatomic) ViewController *vc;
 @property(nonatomic) NSString *opponentArrayString;
 @property(nonatomic) NSTimer *timer;
+@property(nonatomic) NSTimer *timer2;
 
 @end
 @implementation TicTacToeBrain
@@ -24,7 +25,7 @@
     /*
      Each player starts polling for a blank board, each can make a move. Whoever goes first starts the game. Second player stops initial polling and starts polling as usual for difference. WIP
      */
-    self.LOOK UP
+//    self.LOOK UP
     
     self.player1Turn=YES;
     if (self.boardArray == nil){
@@ -35,7 +36,6 @@
     }
     self.vc = [[ViewController alloc] init];
     self.dataSource = [[TicTacToeDataSource alloc] initializeWithBrain: self];
-
 }
 
 -(void) initializeWithVC: (ViewController *) v
@@ -49,6 +49,10 @@
     }
     self.vc = v;
     self.dataSource = [[TicTacToeDataSource alloc] initializeWithBrain: self];
+    [self.dataSource arrayURLString:@"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py?bArray=000000000"];
+    self.arrayString = @"000000000";
+    self.timer2 = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(checkStart) userInfo:nil repeats: YES];
+
 }
 
 -(void) printArrays
@@ -122,7 +126,18 @@
 
     return true;
 }
-
+-(bool) checkStart
+{
+//    if (self.player1Turn)
+//        return false;
+    
+    NSLog(@"================================================");
+    NSString *temp = @"http://cs.sonoma.edu/~ppfeffer/TicTacToe/dbInterface.py";
+    //self.dataSource = [[TicTacToeDataSource alloc] initWithbArrayURLString:temp];
+    [self.dataSource arrayURLString:temp];
+    
+    return true;
+}
 -(int) isThereAWinner {
     int i=0; int j=0;
     int countToThree=0;
@@ -148,6 +163,7 @@
         NSLog(@"DIFFERENT BOARDS");
         _player1Turn = true;
         [self setNewBoard];
+        [self.timer2 invalidate];
     }
 }
 
@@ -158,7 +174,7 @@
     int count = 0;
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-            NSLog(@"Char: %hu", (int)[_opponentArrayString characterAtIndex:count]-48);
+            NSLog(@"Char: %d", (int)[_opponentArrayString characterAtIndex:count]-48);
             self.boardArray[i][j] = @((int)[_opponentArrayString characterAtIndex:count]-48);
             [_vc setBoardBasedOnArray];
             count += 1;
