@@ -146,16 +146,64 @@
 }
 -(int) isThereAWinner {
     NSLog(@"Called check for win");
-    int i=0; int j=0;
-    int countToThree=0;
-    //Horizantal
-    for(i=0; i<3;i++){
-        for(j=0; j<3; j++){
-            if ([self.boardArray[i][j] isEqual: @1]){
-                countToThree += 1;
-            }
-        }
+//    int i=0; int j=0;
+//    int countToThree1=0;
+//    //Horizantal
+//    for(i=0; i<3;i++){
+//        for(j=0; j<3; j++){
+//            if ([self.boardArray[i][j] isEqual: @1]){
+//                countToThree1 += 1;
+//            }
+//        }
+//    }
+//    if (countToThree1 >= 3){
+//        return 1;
+//    }
+//   
+//    for(i=0; i<3;i++){
+//        countToThree1=0;
+//        for(j=0; j<3; j++){
+//            if ([self.boardArray[j][i] isEqual: @1]){
+//                countToThree1 += 1;
+//            }
+//        }
+//    }
+//    
+//    if (countToThree1 >= 3){
+//        return 1;
+//    }
+//    return 0;
+    
+    // Vertical
+    if (([self.boardArray[0][0] isEqual: @1] && [self.boardArray[1][0] isEqual: @1] && [self.boardArray[2][0] isEqual: @1]) ||
+        ([self.boardArray[0][1] isEqual: @1] && [self.boardArray[1][1] isEqual: @1] && [self.boardArray[2][1] isEqual: @1]) ||
+        ([self.boardArray[0][2] isEqual: @1] && [self.boardArray[1][2] isEqual: @1] && [self.boardArray[2][2] isEqual: @1]) ||
+        
+        ([self.boardArray[0][0] isEqual: @1] && [self.boardArray[0][1] isEqual: @1] && [self.boardArray[0][2] isEqual: @1]) ||
+        ([self.boardArray[1][0] isEqual: @1] && [self.boardArray[1][1] isEqual: @1] && [self.boardArray[1][2] isEqual: @1]) ||
+        ([self.boardArray[2][0] isEqual: @1] && [self.boardArray[2][1] isEqual: @1] && [self.boardArray[2][2] isEqual: @1]) ||
+        
+        ([self.boardArray[0][0] isEqual: @1] && [self.boardArray[1][1] isEqual: @1] && [self.boardArray[2][2] isEqual: @1]) ||
+        ([self.boardArray[0][2] isEqual: @1] && [self.boardArray[1][1] isEqual: @1] && [self.boardArray[2][0] isEqual: @1])) {
+        NSLog(@"PLAYER 1 WINS");
+        return 1;
+    } else if (([self.boardArray[0][0] isEqual: @2] && [self.boardArray[1][0] isEqual: @2] && [self.boardArray[2][0] isEqual: @2]) ||
+        ([self.boardArray[0][1] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[2][1] isEqual: @2]) ||
+        ([self.boardArray[0][2] isEqual: @2] && [self.boardArray[1][2] isEqual: @2] && [self.boardArray[2][2] isEqual: @2]) ||
+        
+        ([self.boardArray[0][0] isEqual: @2] && [self.boardArray[0][1] isEqual: @2] && [self.boardArray[0][2] isEqual: @2]) ||
+        ([self.boardArray[1][0] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[1][2] isEqual: @2]) ||
+        ([self.boardArray[2][0] isEqual: @2] && [self.boardArray[2][1] isEqual: @2] && [self.boardArray[2][2] isEqual: @2]) ||
+        
+        ([self.boardArray[0][0] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[2][2] isEqual: @2]) ||
+        ([self.boardArray[0][2] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[2][0] isEqual: @2])) {
+        NSLog(@"PLAYER 2 WINS");
+        return 1;
+    } else if ([self.arrayString rangeOfString:@"0"].location == NSNotFound){
+        NSLog(@"Cats game");
+        return 3;
     }
+    
     return 0;
 }
 
