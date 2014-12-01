@@ -65,6 +65,9 @@
 //add the quadrant then fill in the array
 -(BOOL) isValidTap:(NSValue *) point byPlayer:(int)player
 {
+    if(!self.player1Turn)
+        return false;
+    
     if (self.p == 0)
         self.p = 1;
     
@@ -142,6 +145,7 @@
     return true;
 }
 -(int) isThereAWinner {
+    NSLog(@"Called check for win");
     int i=0; int j=0;
     int countToThree=0;
     //Horizantal
@@ -179,13 +183,14 @@
     int count = 0;
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-            NSLog(@"Char: %d", (int)[_opponentArrayString characterAtIndex:count]-48);
+//            NSLog(@"Char: %d", (int)[_opponentArrayString characterAtIndex:count]-48);
             self.boardArray[i][j] = @((int)[_opponentArrayString characterAtIndex:count]-48);
             [_vc setBoardBasedOnArray];
             count += 1;
         }
     }
     [self printArrays];
+    [self isThereAWinner];
 }
 
 

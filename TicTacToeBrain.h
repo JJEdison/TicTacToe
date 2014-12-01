@@ -21,5 +21,6 @@
 -(void) printArrays;
 -(void) setOpponentArrayString: (NSString *) string;
 -(void) setNewBoard;
+//-(int) isThereAWinner;
 
 @end
