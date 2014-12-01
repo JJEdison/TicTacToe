@@ -60,6 +60,7 @@
     NSLog(@"Quad 0");
     for(int i = 0; i < 3; i++)
         NSLog(@"%@ %@ %@", self.boardArray[i][0], self.boardArray[i][1], self.boardArray[i][2]);
+    NSLog(@"%@", self.arrayString);
 
 }
 //add the quadrant then fill in the array
@@ -88,9 +89,12 @@
         [self flipPlayer];
         if (self.p==1){
             self.boardArray[row][col] = @1;
+            [self isThereAWinner];
         }
-        if (self.p==2)
+        if (self.p==2){
             self.boardArray[row][col] = @2;
+            [self isThereAWinner];
+        }
         return true;
         }
     else{
@@ -146,33 +150,6 @@
 }
 -(int) isThereAWinner {
     NSLog(@"Called check for win");
-//    int i=0; int j=0;
-//    int countToThree1=0;
-//    //Horizantal
-//    for(i=0; i<3;i++){
-//        for(j=0; j<3; j++){
-//            if ([self.boardArray[i][j] isEqual: @1]){
-//                countToThree1 += 1;
-//            }
-//        }
-//    }
-//    if (countToThree1 >= 3){
-//        return 1;
-//    }
-//   
-//    for(i=0; i<3;i++){
-//        countToThree1=0;
-//        for(j=0; j<3; j++){
-//            if ([self.boardArray[j][i] isEqual: @1]){
-//                countToThree1 += 1;
-//            }
-//        }
-//    }
-//    
-//    if (countToThree1 >= 3){
-//        return 1;
-//    }
-//    return 0;
     
     // Vertical
     if (([self.boardArray[0][0] isEqual: @1] && [self.boardArray[1][0] isEqual: @1] && [self.boardArray[2][0] isEqual: @1]) ||
@@ -199,12 +176,16 @@
         ([self.boardArray[0][2] isEqual: @2] && [self.boardArray[1][1] isEqual: @2] && [self.boardArray[2][0] isEqual: @2])) {
         NSLog(@"PLAYER 2 WINS");
         return 1;
-    } else if ([self.arrayString rangeOfString:@"0"].location == NSNotFound){
-        NSLog(@"Cats game");
-        return 3;
     }
-    
-    return 0;
+    for (int i =0; i<3; i++){
+        for (int j=0; j<3; j++){
+            if ([self.boardArray[i][j] isEqual: @"0"] || [self.boardArray[i][j] isEqual: @0] )
+                return 0;
+        }
+    }
+
+    NSLog(@"Cats");
+    return 3;
 }
 
 -(void) setOpponentArrayString: (NSString *) string
