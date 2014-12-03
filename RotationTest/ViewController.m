@@ -97,9 +97,9 @@ const int TOP_MARGIN = 50;
     for(int j = 0; j < 3; j++) {
         for(int i = 0; i < 3; i++) {
             if ([self.tBrain.boardArray[j][i] isEqual: @1]){
-                iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redMarble.png"]];
+                iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"x.png"]];
             } else if ([self.tBrain.boardArray[j][i] isEqual: @2]){
-                iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"greenMarble.png"]];
+                iView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"o.png"]];
             } else {
                 iView = NULL;
             }
